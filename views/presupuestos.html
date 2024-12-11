@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>presupuestos</title>
+  <link rel="stylesheet" href="../css/estilos3.css">
+</head>
+<body> 
+  <!-- cabecera -->
+  <header> 
+    <img src="../assets/images/logo.jpg" alt="logo" class="logo"> 
+    <h1>CAFÉ DE MONTAÑA...<br> ¡Más que café es vida!</h1> 
+  </header> 
+  <!-- barra de navegación -->
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu">☰</label>
+    <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../views/productos.html"> Nuestros productos</a></li>
+        <li><a href="../views/presupuestos.html"class="active">Presupuesto</a></li>
+        <li><a href="../views/contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+   <!-- contenido -->
+  <div class="container">
+    <h1>PRESUPUESTO</h1>
+    <form id="contact-form">
+      <label for="fullname">Nombre Completo:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="phone">Número de Teléfono:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="message">Solicite mas información</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Enviar Formulario</button>
+    </form>
+  </div>
+  <!-- pie de pagina-->
+  <footer class="footer-extra">
+    <p>© 2024 cafe de montaña. Todos los derechos reservados.</p>
+   <div class="redes-sociales">
+       <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+           <img src="../assets/images/facebook_jpg.jpg" alt="Facebook">
+           <p>facebook</p>
+       </a>
+           
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+           <img src="../assets/images/instagram.jpg" alt="Instagram">
+           <p>instagram</p>
+       </a>
+       <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+           <img src="../assets/images/tiktok_jpg.jpg" alt="TikTok">
+           <p>TikTok</p>
+       </a>
+   </div>
+ </footer>
+
+</body>   
+    

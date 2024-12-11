@@ -1,0 +1,265 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+html {
+  background-color: antiquewhite;
+}
+  /*en esta web principal estoy usando grid */
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "article"
+    "main"
+    "aside"
+    "footer";
+  grid-template-rows: 150px auto auto 1fr auto 100px;
+  grid-template-columns: 100%;
+}
+  
+header {
+  grid-area: header;
+  background-color: rgb(0, 255, 98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+nav {
+  grid-area: nav;
+  background-color: rgb(221, 255, 0);
+  display: flex;
+  justify-content: center;
+}
+  
+main {
+  grid-area: main;
+  background-color:rgb(236, 238, 229);
+}
+  
+article {
+  grid-area: article;
+  margin: 10px;
+  background-color: rgb(236, 238, 229);
+}
+  
+aside {
+  grid-area: aside;
+  margin: 15px;
+  background-color: brown;
+  text-align: left;
+}
+  
+footer {
+  grid-area: footer;
+  background-color: aqua;
+  text-align: center;
+  padding: 20px;
+}
+  /*cabecera--*/
+.logo {
+  width: 100px;
+  margin: 10px;
+  border: 5px solid #070707;
+}
+  
+header h1 {
+  margin-left: 10px;
+}
+ /*barra de navegacion*/
+nav {
+  background-color: rgb(210, 156, 30);
+  padding: 10px 0;
+  position: relative;
+}
+.menu{
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: rgb(120, 90, 20);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+nav ul a.active {
+  background-color: rgb(180, 140, 40); 
+} 
+/* contenido-*/
+article img {
+  display: none;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  float: left;
+}
+.main-img {
+  justify-items: center;
+  display: none; 
+  gap: 20px;
+  justify-content: center;
+}
+  
+aside{
+  background-color: antiquewhite;
+}
+aside ul {
+  padding: 15px;
+  list-style: auto;
+  margin: 10px;
+}
+  
+aside img {
+  display: none;
+}
+/*pie de pagina */
+.footer-extra{
+  background-color: #333;
+  color: white; 
+}
+.footer p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+  
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+  
+.redes-sociales a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+  
+.redes-sociales a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+ /*pantalla pequeña*/ 
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "aside main main"
+      "aside article article"
+      "footer footer footer";
+    grid-template-rows: 100px auto auto 1fr 100px;
+    grid-template-columns: 200px 1fr;
+  }
+  .menu{
+    display: block;
+  }
+  #menu-toggle{
+    display: none;
+  }
+  nav ul{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color:  rgb(210, 156, 30);
+    z-index: 1;
+  }
+  #menu-toggle:checked+.menu+ul {
+    display: flex;
+  }
+  article.imagen-final{
+    display: none;
+  }
+  .main-img{
+    display: none;
+    width: 150px;
+    height: auto;
+  }
+  
+  aside img {
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+}
+ /*pantalla grande en este caso mi favorita*/ 
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "aside main main"
+      "aside article article"
+      "footer footer footer";
+    grid-template-rows: 150px auto auto 1fr 200px;
+    grid-template-columns: 200px 1fr;
+  }
+  nav ul{
+    display: flex;
+  }
+  .menu{
+    display: none;
+  }
+  #menu-toggle{
+    display: none;
+  }
+  article img {
+    display: flex;
+    width: 450px;
+    height: auto;
+    justify-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  article.imagen-final{
+    display: flex;
+    width: 100px;
+    height: auto;
+  }
+  .main-img{
+    display: flex;
+    max-width: 200px;
+    height: auto;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    }
+  .main-img img{
+    max-width: 150px;
+    height: auto
+  }
+  .main-img img[alt="cafe de beber"] {
+    width: 300px;
+    height: 200px;
+  }
+
+    aside img{ 
+      display: flex;
+    }
+  }
